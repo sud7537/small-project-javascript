@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sort Numbers in Descending Order</title>
+</head>
+<body>
+    <center>
+    <h1>Sort Numbers in Descending Order</h1>
+    <p>Enter a list of numbers separated by commas:</p>
+    <input type="text" id="numberInput" placeholder="e.g., 5, 2, 8, 1, 4">
+    <button onclick="sortNumbers()">Sort Descending</button>
+    <p>Sorted Numbers:</p>
+    <div id="sortedNumbers"></div>
+
+    <script>
+        function sortNumbers() {
+            const numberInput = document.getElementById("numberInput").value;
+            const numbers = numberInput.split(',').map(Number);
+            numbers.sort(function(a, b) {
+                return b - a;
+            });
+
+            const sortedNumbers = document.getElementById("sortedNumbers");
+            sortedNumbers.innerText = numbers.join(', ');
+        }
+    </script>
+    </center>
+</body>
+</html>

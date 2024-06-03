@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Number convert </title>
+
+        <style>
+        body
+        {
+            background: linear-gradient(135deg,#9affe9,#387de5);
+            text-align: center;
+            font-size: 20px;
+            font-family:'Lucida Sans', 'Lucida Sans Regular';
+            color: #35064d;
+            margin-top: 120px;
+        }
+    </style>
+    </head>
+    <body>
+        <button onclick="myFunction()">CLICK ON A BUTTON TO INPUT A NUMBER</button>
+        <h3 id="a"></h3>
+        <script>
+        function myFunction()
+        {
+            var num = prompt("Please enter your number", "0-999");
+        
+            document.getElementById("a").innerHTML=num;
+            if(num>=0 && num<=999)
+            {
+                var res=num.toString().split("");
+                document.getElementById("a").innerHTML=res;
+                var s="";
+                var i;
+                for(i=0;i<res.length;i++)
+                {
+                    if(res[i]=='0')
+                    {
+                        s=s+" zero";
+                    }
+                    else if(res[i]=='1')
+                    {
+                        s=s+" one";
+                    }
+                    else if (res[i]=='2')
+                {
+                    s=s+" two";
+                }
+                else if(res[i]=='3')
+                {
+                    s=s+" three";
+                }
+                else if(res[i]=='4')
+                {
+                    s= s+" four";
+                }
+                else if(res[i]=='5')
+                {
+                    s= "five"+s;
+                }
+                else if(res[i]=='6')
+                {
+                    s= s+" six";
+                }
+                else if(res[i]=='7')
+                {
+                    s= s+" seven";
+                }
+                else if(res[i]=='8')
+                {
+                    s= s+" eigth";
+                }
+                else if(res[i]=='9')
+                {
+                    s= s+" nine";
+                }
+            }
+            document.getElementById("a").innerHTML=s;
+        }
+        else if(num<=0 || num>=999)
+        {
+            document.getElementById("a").innerHTML="OUT OF RANGE";
+        }
+    else
+    {
+        document.getElementById("a").innerHTML="NOT A NUMBER";
+    }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sort Numbers </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(22, 62, 218);
+        }
+        h1 {
+            color:greenyellow;
+            text-align: center;
+            padding: 20px 0;  
+            text-shadow: 15px,10px,#7711dd;
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5%;
+            border-style: dashed;
+            background-color: burlywood;
+            color: rgb(28, 28, 27);
+        }
+        #demo {
+            width: 450px;
+            margin: 10px;
+            padding: 5px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 3%;
+            border-style: dotted;
+            background-color: burlywood;
+        }
+        div{
+            width: 70%;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            margin-left: 10%;
+            background-color: #930fdac8;
+        }
+        .center-div {
+            text-align: center;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 10%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sort Numbers with Javascript</h1>
+    <div class="center-div">
+    <input type="text" id="numbers" size ="60px"placeholder="Enter numbers separated by commas"><br><br>
+    <button onclick="sortNumbers('asc')"><b>Sort Numbers in Ascending Order</b></button>
+    <button onclick="sortNumbers('desc')"><b>Sort Numbers in Descending Order</b></button><br><br>
+    <input type="text" id="demo" readonly style="width: 450px;" placeholder="result is here">
+    </div>
+    <script>
+        function sortNumbers(order) {
+            var input = document.getElementById('numbers').value; // Get input from user           
+            var numbers = input.split(',').map(Number);// Convert input string to array of numbers
+            // Sort numbers based on the chosen order
+            if (order === 'asc') {
+                numbers.sort(function(a, b){return a-b});
+            } else {
+                numbers.sort(function(a, b){return b-a});
+            }
+            document.getElementById("demo").value = numbers.join(', ');  // Display sorted numbers in an input box
+        }
+    </script>
+</body>
+</html>
